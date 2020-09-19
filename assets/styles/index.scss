@@ -1,1 +1,100 @@
 @import '~bootstrap/scss/bootstrap';
+
+hover {
+  background-color: #e3b732;
+  cursor: pointer;
+}
+
+#buttons {
+  margin-left: 145px;
+  margin-top: 20px;
+}
+
+
+.img-responsive {
+  display: flex;
+  // align-items: margin-left;
+  // justify-content: center;
+  // justify-content: flex-end;
+  // margin-right: 0 auto;
+  // display: flex;
+  // justify-content: space-between;
+  // position: relative;
+  // float: right;
+  // margin: 0 auto;
+  // margin-right: auto;
+  // margin-bottom: auto;
+  // margin-left: auto;
+  // margin: 0;
+  // margin: none;
+  // height: auto;
+  // width: auto;
+  height: 90vh;
+  margin: 0 auto;
+  width: 210vh;
+  // width: 1020px;
+  // height: 620px;
+}
+
+body {
+  // background: #89CFF0;
+  // background-image: url('./public/cloud-background.jpg');
+}
+
+.login-box {
+  background: rgba(0, 0, 0, 0.5);
+  width: 520px;
+  height: 620px;
+  color: #fff;
+  // color: black;
+  top: 50%;
+  left: 50%;
+  position: relative;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 15px 10px;
+  margin-top: 200px;
+}
+
+form input[type='submit'] {
+  margin-bottom: -20px;
+  width: 160px;
+  cursor: pointer;
+  line-height: 20px;
+  background: #e3b732;
+  border: none;
+  outline: none;
+  height: 40px;
+  font-size: 18px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+form input[type='submit']:hover {
+  background: white;
+  transition: 2s;
+}
+
+h1 {
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.login-box input{
+  margin-bottom: -250px;
+  width: 100%;
+}
+
+.login-box input[type='email'], input[type="password"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  border-radius: 20px;
+  background: white;
+  outline: none;
+  height: 25px;
+  margin-top: 15px;
+  color: black;
+  font-size: 16px;
+}
