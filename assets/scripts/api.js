@@ -1,5 +1,6 @@
 const config = require('./config')
 const store = require('./store')
+const currentUser = require('./currentUser')
 
 const signUp = function (data) {
   return $.ajax({
@@ -39,7 +40,7 @@ const changePassword = function (data) {
   })
 }
 
-const submit = function (data) {
+const groceryListSubmit = function (data) {
   return $.ajax({
     url: config.apiUrl + '/groceries',
     method: 'POST',
@@ -49,6 +50,17 @@ const submit = function (data) {
     data: data
   })
 }
+
+// const onDelete = function (data)
+//   return $.ajax({
+//     url: config.apiUrl + '/groceries',
+//     method: 'DELETE',
+//     data: '{}',
+//     headers: {
+//     Authorization: 'Bearer ' + store.user.token
+//   },
+// })
+// }
 
 // const listHistory = function () {
 //   return $.ajax({
@@ -84,7 +96,9 @@ module.exports = {
   signIn,
   signOut,
   changePassword,
-  submit
+  groceryListSubmit,
+  currentUser
+  // delete
   // gamesHistory,
   // onSquaresClick,
   // currentPlay

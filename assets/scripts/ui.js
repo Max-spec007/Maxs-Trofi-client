@@ -16,6 +16,7 @@ const onSignUpFailure = function () {
 const onSignInSuccess = function (response) {
   store.user = response.user
   $('#message').text('Thanks for signing in ' + response.user.email)
+  $('#message').text('Please scroll down to access the list creator!')
   // $('#message').text('Please click new game')
   $('#sign-in-form').trigger('reset')
   $('#change-password').show()
@@ -25,7 +26,6 @@ const onSignInSuccess = function (response) {
   $('.container').show()
   $('#buttons').show()
   $('#sign-out-form').show()
-  // $('#crossRoadBoard').hide()
   $('#my-login').hide()
   $('#my-logout').show()
 }
@@ -68,6 +68,23 @@ const onChangePasswordFailure = function () {
   $('#my-logout').show()
 }
 
+const onGroceryListSubmitSuccess = function () {
+  console.log('Success')
+  // currentUser.list = response.list
+  // $('#message').text('A new list was created!')
+  // $('#my-login').hide()
+  // $('#my-logout').show()
+  // store.list = ''
+  // store.winner = ''
+}
+
+const onGroceryListSubmitFailure = function () {
+  console.log('Failure')
+  // $('#message').text('List was not created, please try again ')
+  // $('#my-login').hide()
+  // $('#my-logout').show()
+}
+
 // const onNewGameSuccess = function (response) {
 //   currentPlay.game = response.game
 //   $('#crossRoadBoard').show()
@@ -107,9 +124,11 @@ module.exports = {
   onSignOutFailure,
   onChangePasswordSuccess,
   onChangePasswordFailure,
+  onGroceryListSubmitSuccess,
+  onGroceryListSubmitFailure,
+  currentUser
   // onNewGameSuccess,
   // onNewGameFailure,
   // onGamesHistorySuccess,
   // onGamesHistoryFailure,
-  currentUser
 }

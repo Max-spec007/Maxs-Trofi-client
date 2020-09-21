@@ -57,25 +57,54 @@
                <input type="submit" value="Change Password">
              </form>
            </section>
-           <div id='buttons'>
+           <!-- <div id='buttons'>
               <button id="submit" type="button">submit</button>
-              <!-- <button id="history" type="button">Game History</button> -->
-          </div>
+          </div> -->
          </div>
            <section>
-             <div class="container" id="crossRoadBoard">
-               <div class="row board">
-                <div class="col-4 box" id='0'></div>
-                <div class="col-4 box" id='1'></div>
-                <div class="col-4 box" id='2'></div>
-                <div class="col-4 box" id='3'></div>
-                <div class="col-4 box" id='4'></div>
-                <div class="col-4 box" id='5'></div>
-                <div class="col-4 box" id='6'></div>
-                <div class="col-4 box" id='7'></div>
-                <div class="col-4 box" id='8'></div>
-             </div>
-            </div>
+            <table class="center">
+          <tr>
+              <td>
+                  <!-- <form name="grocery-list-form" onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off"> -->
+                    <form name="grocery-list-form" id="grocery-list-form" autocomplete="off">
+                      <div>
+                          <label><strong>NAME OF FOOD</strong></label><label class="validation-error hide" id="nameOfFoodValidationError">All fields are required.</label>
+                          <input type="text" name="nameOfFood" id="nameOfFood">
+                      </div>
+                      <div>
+                          <label><strong>QUANTITY</strong></label>
+                          <input type="text" name="quantity" id="quantity">
+                      </div>
+                      <div>
+                          <label><strong>CATEGORY</strong></label>
+                          <input type="text" name="category" id="category">
+                      </div>
+                      <div>
+                          <label><strong>DATE OF PURCHASE</strong></label>
+                          <input type="text" name="dateOfPurchase" id="dateOfPurchase">
+                      </div>
+                      <div  class="form-action-buttons">
+                          <input type="submit" value="Submit">
+                      </div>
+                  </form>
+              </td>
+              <td>
+                  <table class="list" id="groceryList">
+                      <thead>
+                          <tr>
+                              <th id='nameOfFood'>Name of Food</th>
+                              <th>Quantity</th>
+                              <th>Category</th>
+                              <th>Date of Purchase</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+
+                      </tbody>
+                  </table>
+              </td>
+          </tr>
+      </table>
            </section>
           </div>
       <!-- <h1>Browser Template</h1> -->
