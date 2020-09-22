@@ -63,7 +63,7 @@ const showAllList = function () {
 
 const listUpdate = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/groceries',
+    url: config.apiUrl + '/groceries/' + data.groceries.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -74,7 +74,7 @@ const listUpdate = function (data) {
 
 const listDelete = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/groceries',
+    url: config.apiUrl + '/groceries/' + data.groceries.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -130,7 +130,6 @@ module.exports = {
   listCreate,
   showAllList,
   listUpdate,
-  // modify,
   listDelete,
   currentUser
   // modify,

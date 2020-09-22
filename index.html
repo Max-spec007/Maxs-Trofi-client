@@ -65,43 +65,49 @@
          </div>
            <section>
             <table class="center">
-          <tr>
               <td>
-                  <!-- <form name="grocery-list-form" onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off"> -->
-                    <form name="grocery-list-form" id="grocery-list-form" autocomplete="off">
-                      <div>
-                          <label><strong>NAME OF FOOD</strong></label><label class="validation-error hide" id="nameOfFoodValidationError">All fields are required.</label>
-                          <input type="text" name="nameOfFood" id="nameOfFood">
-                      </div>
-                      <div>
-                          <label><strong>QUANTITY</strong></label>
-                          <input type="text" name="quantity" id="quantity">
-                      </div>
-                      <div>
-                          <label><strong>CATEGORY</strong></label>
-                          <input type="text" name="category" id="category">
-                      </div>
-                      <div>
-                          <label><strong>DATE OF PURCHASE</strong></label>
-                          <input type="text" name="dateOfPurchase" id="dateOfPurchase">
-                      </div>
-                       <div class="form-action-buttons" id='buttons'>
-                         <!-- <input type="submit" value="Submit"> -->
-                         <!-- <input type="submit" value="Show"> -->
-                         <!-- <input type="submit" value="Edit"> -->
-                         <button id="submit" type="button">Submit</button>
-                         <button id="show" type="button">Show</button>
-                         <button id="edit" type="button">Edit</button>
-                         <button id="delete" type="button">Delete</button>
-                       </div>
-                      <!-- <div  class="form-action-buttons">
-                          <input type="submit" value="Submit">
-                          <input type="show" value="Show">
-                      </div> -->
-                  </form>
-                <div id="listContent"></div>
-              <!-- </td>
-              <td> -->
+                <button id="show">Show</button>
+                <form id="grocery-list-form">
+                  <label for="name-of-food"><strong>Name of Food</strong></label>
+                  <input name="groceries[nameOfFood]" type="text" placeholder="Name of Food">
+                  <label for="quantity"><strong>Quantity</strong></label>
+                  <input name="groceries[quantity]" type="text" placeholder="Quantity">
+                  <label for="category"><strong>Category</strong></label>
+                  <input name="groceries[category]" type="text" placeholder="Category">
+                  <label for="date-of-purchase"><strong>Date of Purchase</strong></label>
+                  <input name="groceries[dateOfPurchase]" type="text" placeholder="Date of Purchase">
+                  <input type="submit" value="Create">
+                </form>
+
+              <form id="edit">
+                <label for="groceries-id"><strong>Groceries Id</strong></label>
+                <input name="groceries[id]" type="text" placeholder="Groceries ID">
+                <label for="name-of-food"><strong>Name of Food</strong></label>
+                <input name="groceries[nameOfFood]" type="text" placeholder="Name of Food">
+                <label for="quantity"><strong>Quantity</strong></label>
+                <input name="groceries[quantity]" type="text" placeholder="Quantity">
+                <label for="category"><strong>Category</strong></label>
+                <input name="groceries[category]" type="text" placeholder="Category">
+                <label for="date-of-purchase"><strong>Date of Purchase</strong></label>
+                <input name="groceries[dateOfPurchase]" type="text" placeholder="Date of Purchase">
+                <input type="submit" value="Edit">
+              </form>
+
+              <form id="delete">
+                <label for="groceries-id"><strong>Groceries Id</strong></label>
+                <input name="groceries[id]" type="text" placeholder="Groceries ID">
+                <input type="submit" value="Delete">
+              </form>
+
+
+
+            </td>
+              <!-- <input type="submit" value="Edit">
+              <input type="submit" value="Delete"> -->
+
+                <!-- <div id="listContent"></div> -->
+
+              <!-- <td> -->
                   <!-- <table class="list" id="groceryList">
                       <thead>
                           <tr>
@@ -120,8 +126,8 @@
           </tr>
       </table> -->
          </table>
+            <div id="listContent"></div>
            </section>
           </div>
-      <!-- <h1>Browser Template</h1> -->
     </body>
 </html>

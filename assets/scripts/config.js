@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: 'https://max-grocery-app-1.herokuapp.com/',
+  production: 'https://max-grocery-app-1.herokuapp.com',
   development: 'http://localhost:4741'
 }
 

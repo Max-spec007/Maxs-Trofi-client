@@ -65,11 +65,13 @@ const onChangePassword = function (event) {
 }
 
 const onListCreate = function (event) {
+  console.log('It worked!')
   event.preventDefault()
   const form = event.target
   // use getFormFields to get data from the form
   const data = getFormFields(form)
   // send data in AJAX request to the API
+  console.log(data)
   api.listCreate(data)
   // handle successul response
     .then(ui.onListCreateSuccess)
@@ -90,11 +92,13 @@ const onShowAllList = function (event) {
 }
 
 const onListUpdate = function (event) {
+  console.log('It worked!', event.target)
   event.preventDefault()
+  const form = event.target
   // use getFormFields to get data from the form
-
+  const data = getFormFields(form)
   // send data in AJAX request to the API
-  api.listUpdate()
+  api.listUpdate(data)
   // handle successul response
     .then(ui.onListUpdateSuccess)
   // handle failed response
@@ -104,9 +108,11 @@ const onListUpdate = function (event) {
 const onListDelete = function (event) {
   event.preventDefault()
   // use getFormFields to get data from the form
-
+  const form = event.target
+  // use getFormFields to get data from the form
+  const data = getFormFields(form)
   // send data in AJAX request to the API
-  api.listDelete()
+  api.listDelete(data)
   // handle successul response
     .then(ui.onListDeleteSuccess)
   // handle failed response
