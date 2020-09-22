@@ -68,52 +68,124 @@ const onChangePasswordFailure = function () {
   $('#my-logout').show()
 }
 
-const onGroceryListSubmitSuccess = function () {
-  console.log('Success')
-  // currentUser.list = response.list
-  // $('#message').text('A new list was created!')
-  // $('#my-login').hide()
-  // $('#my-logout').show()
-  // store.list = ''
-  // store.winner = ''
+const onListCreateSuccess = function (response) {
+  console.log(response)
+
+  $('#listContent').html('')
+
+  // loop through API response data
+  response.groceries.forEach(function (grocery) {
+    // build HTML element with data
+    const groceryHTML = (`
+      <table>
+        <thead>
+            <tr>
+              <th>Name Of Food</th>
+              <th>Quantity</th>
+              <th>Category</th>
+              <th>Date of Purchase</th>
+              <th>id</th>
+            </tr>
+        </thead>
+          <tbody>
+            <tr>
+              <td>${grocery.nameOfFood}</td>
+              <td>${grocery.quantity}</td>
+              <td>${grocery.category}</td>
+              <td>${grocery.dateOfPurchase}</td>
+              <td>${grocery._id}</td>
+           </tr>
+        </tbody>
+      </table>
+      `)
+
+    // append bookHTML to our book-display element
+    $('#listContent').append(groceryHTML)
+  })
 }
 
-const onGroceryListSubmitFailure = function () {
-  console.log('Failure')
-  // $('#message').text('List was not created, please try again ')
-  // $('#my-login').hide()
-  // $('#my-logout').show()
+const onShowAllListSuccess = function (response) {
+  console.log(response)
+
+  let groceriesHTML = ''
+
+  response.groceries.forEach(function (grocery) {
+    const groceryHTML = (`
+<table>
+  <thead>
+      <tr>
+        <th>Name Of Food</th>
+        <th>Quantity</th>
+        <th>Category</th>
+        <th>Date of Purchase</th>
+        <th>id</th>
+      </tr>
+  </thead>
+    <tbody>
+      <tr>
+        <td>${grocery.nameOfFood}</td>
+        <td>${grocery.quantity}</td>
+        <td>${grocery.category}</td>
+        <td>${grocery.dateOfPurchase}</td>
+        <td>${grocery._id}</td>
+     </tr>
+  </tbody>
+</table>
+      `)
+
+    groceriesHTML += groceryHTML
+  })
+  console.log('groceriesHTML is', groceriesHTML)
+  $('#listContent').html(groceriesHTML)
+
+  $('form').trigger('reset')
 }
 
-// const onNewGameSuccess = function (response) {
-//   currentPlay.game = response.game
-//   $('#crossRoadBoard').show()
-//   $('.box').empty()
-//   $('#history').show()
-//   $('#message').text('A new game was created! Please scroll down to play game! ')
-//   $('#my-login').hide()
-//   $('#my-logout').show()
-//   store.winner = ''
-// }
-//
-// const onNewGameFailure = function () {
-//   $('#message').text('Game was not created ')
-//   $('#my-login').hide()
-//   $('#my-logout').show()
-// }
-//
-// const onGamesHistorySuccess = function (response) {
-//   $('#message').text('Number of games played: ' + response.games.length)
-//   $('#my-login').hide()
-//   $('#my-logout').show()
-//   console.log(response.games.length)
-// }
-//
-// const onGamesHistoryFailure = function () {
-//   $('#message').text('Failed to load games history ')
-//   $('#my-login').hide()
-//   $('#my-logout').show()
-// }
+const onListUpdateSuccess = function (response) {
+  // add success message to our update-book-message element
+  $('#update-list-message').html('You successfully updated the list')
+
+  // empty out the book-display element in case it was displaying information
+  // about the book we just updated, replace with a message for the user to get
+  // all the books again.
+  $('#list-display').html('Lists have changed! Click "Show" again to see all the lists.')
+
+  // add class for success messaging
+  $('#update-list-message').addClass('success')
+
+  // use setTimeout to allow the success message to stay for 5 seconds before
+  // the message is replaced with '' and the 'success' class is removed
+  setTimeout(() => {
+    $('#update-list-message').html('')
+    $('#update-list-message').removeClass('success')
+  }, 5000)
+
+  // reset all forms
+  $('form').trigger('reset')
+}
+
+const onListDeleteSuccess = function () {
+  // add success message to our delete-book-message element
+  $('#delete-list-message').html('List successfully deleted!')
+
+  // empty out the book-display element in case it was displaying information
+  // about the book we just deleted, replace with a message for the user to get
+  // all the books again.
+  $('#list-display').html('Lists have changed! Click "Show" again to see all the lists')
+
+  // add class for success messaging
+  $('#delete-list-message').addClass('success')
+
+  // use setTimeout to allow the success message to stay for 5 seconds before
+  // the message is replaced with '' and the 'success' class is removed
+  setTimeout(() => {
+    $('#delete-list-message').html('')
+    $('#delete-list-message').removeClass('success')
+  }, 5000)
+
+  // reset all forms
+  $('form').trigger('reset')
+}
 
 module.exports = {
   onSignUpSuccess,
@@ -124,9 +196,12 @@ module.exports = {
   onSignOutFailure,
   onChangePasswordSuccess,
   onChangePasswordFailure,
-  onGroceryListSubmitSuccess,
-  onGroceryListSubmitFailure,
+  onListCreateSuccess,
+  onShowAllListSuccess,
+  onListUpdateSuccess,
+  onListDeleteSuccess,
   currentUser
+  // onShowAllFailure
   // onNewGameSuccess,
   // onNewGameFailure,
   // onGamesHistorySuccess,

@@ -40,7 +40,7 @@ const changePassword = function (data) {
   })
 }
 
-const groceryListSubmit = function (data) {
+const listCreate = function (data) {
   return $.ajax({
     url: config.apiUrl + '/groceries',
     method: 'POST',
@@ -48,6 +48,37 @@ const groceryListSubmit = function (data) {
       Authorization: 'Bearer ' + store.user.token
     },
     data: data
+  })
+}
+
+const showAllList = function () {
+  return $.ajax({
+    url: config.apiUrl + '/groceries',
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
+const listUpdate = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/groceries',
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: data
+  })
+}
+
+const listDelete = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/groceries',
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
   })
 }
 
@@ -96,8 +127,13 @@ module.exports = {
   signIn,
   signOut,
   changePassword,
-  groceryListSubmit,
+  listCreate,
+  showAllList,
+  listUpdate,
+  // modify,
+  listDelete,
   currentUser
+  // modify,
   // delete
   // gamesHistory,
   // onSquaresClick,

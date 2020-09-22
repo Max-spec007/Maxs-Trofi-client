@@ -64,31 +64,53 @@ const onChangePassword = function (event) {
     .catch(ui.onChangePasswordFailure)
 }
 
-// const onFormActionButtons = function (event) {
-//   event.preventDefault()
-//   // get the form from the event
-//   const form = event.target
-//   // use getFormFields to get data from the form
-//   const data = getFormFields(form)
-//   // send data in AJAX request to the API
-//   api.formActionButtons(data)
-//     // handle successul response
-//     .then(ui.onFormActionButtonsSuccess)
-//     // handle failed response
-//     .catch(ui.onFormActionButtonsFailure)
-// }
-
-const onGroceryListSubmit = function (event) {
+const onListCreate = function (event) {
   event.preventDefault()
   const form = event.target
   // use getFormFields to get data from the form
   const data = getFormFields(form)
   // send data in AJAX request to the API
-  api.groceryListSubmit(data)
+  api.listCreate(data)
   // handle successul response
-    .then(ui.onGroceryListSubmitSuccess)
+    .then(ui.onListCreateSuccess)
   // handle failed response
-    .catch(ui.onGroceryListSubmitFailure)
+    .catch(ui.onListCreateFailure)
+}
+
+const onShowAllList = function (event) {
+  event.preventDefault()
+  // use getFormFields to get data from the form
+
+  // send data in AJAX request to the API
+  api.showAllList()
+  // handle successul response
+    .then(ui.onShowAllListSuccess)
+  // handle failed response
+    .catch(ui.onShowAllListFailure)
+}
+
+const onListUpdate = function (event) {
+  event.preventDefault()
+  // use getFormFields to get data from the form
+
+  // send data in AJAX request to the API
+  api.listUpdate()
+  // handle successul response
+    .then(ui.onListUpdateSuccess)
+  // handle failed response
+    .catch(ui.onListUpdateFailure)
+}
+
+const onListDelete = function (event) {
+  event.preventDefault()
+  // use getFormFields to get data from the form
+
+  // send data in AJAX request to the API
+  api.listDelete()
+  // handle successul response
+    .then(ui.onListDeleteSuccess)
+  // handle failed response
+    .catch(ui.onListDeleteFailure)
 }
 
 module.exports = {
@@ -96,7 +118,9 @@ module.exports = {
   onSignIn,
   onSignOut,
   onChangePassword,
-  onGroceryListSubmit,
-  // onFormActionButtons,
+  onListCreate,
+  onShowAllList,
+  onListUpdate,
+  onListDelete,
   store
 }
