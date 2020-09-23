@@ -1,6 +1,6 @@
 # Max's Trofí! A Grocery List Creator
-  Max’s Trofí List is inspired by the Greeks! Submit food, organize it by
-  category, add units, and choose a purchase date. A simple way to feast like
+  Max’s Trofí List is inspired by the Greeks, come live above the clouds! Submit food, 
+  organize it by category, add units, and choose a purchase date. A simple way to feast like
   the Gods. No more sticky notes. Check your made grocery list as you walk
   inside a store.
 ## Tecnologies Used
