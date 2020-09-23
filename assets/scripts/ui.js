@@ -15,15 +15,14 @@ const onSignUpFailure = function () {
 }
 const onSignInSuccess = function (response) {
   store.user = response.user
-  $('#message').text('Thanks for signing in ' + response.user.email)
-  $('#message').text('Please scroll down to access the list creator!')
-  // $('#message').text('Please click new game')
+  $('#message').text('Thanks for signing in ' + response.user.email + ' - Please scroll down to access your grocery list creator, no notepad needed! Remember to click Show after you Create, Edit or Delete. Happy Shopping!')
   $('#sign-in-form').trigger('reset')
   $('#change-password').show()
   $('#history').show()
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
   $('.center').show()
+  $('.list').show()
   $('#buttons').show()
   $('#sign-out-form').show()
   $('#my-login').hide()
@@ -41,6 +40,7 @@ const onSignOutSuccess = function (response) {
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
   $('.center').hide()
+  $('.list').hide()
   $('#buttons').hide()
   $('#change-password').hide()
   $('#sign-up-form').show()
@@ -70,41 +70,14 @@ const onChangePasswordFailure = function () {
 
 const onListCreateSuccess = function () {
   $('#message').text('Grocery list created!')
-  // add success message to content
-//   $('#create-list-message').html('You created a new list!')
-//
-//   // check if the book-display element is NOT just an empty string
-//   if (!($('#list-display').html() === '')) {
-//     // if the element is NOT empty it is probably displaying the book
-//     // information, but we just created a new book!
-//     // we can add a message to let the users know they should request all of
-//     // the books again to see the newly created book included
-//     $('#list-display').html('Books have changed! Click "Show" again to see all the lists.')
-//   }
-//   // $('#book-display').html('')
-//
-//   // add class for success messaging
-//   $('#create-list-message').addClass('success')
-//
-//   // use setTimeout to allow the success message to stay for 5 seconds before
-//   // the message is replaced with '' and the 'success' class is removed
-//   setTimeout(() => {
-//     $('#create-list-message').html('')
-//     $('#create-list-message').removeClass('success')
-//   }, 5000)
-//
-//   // reset all forms
-//   $('form').trigger('reset')
 }
 
 const onShowAllListSuccess = function (response) {
-  console.log(response)
-
   let groceriesHTML = ''
 
   response.groceries.forEach(function (grocery) {
     const groceryHTML = (`
-<table>
+<table class="list">
   <thead>
       <tr>
         <th>Name Of Food</th>
@@ -135,50 +108,10 @@ const onShowAllListSuccess = function (response) {
 
 const onListUpdateSuccess = function () {
   $('#message').text('Grocery list updated!')
-  // add success message to our update-book-message element
-  // $('#update-list-message').html('You successfully updated the list')
-  //
-  // // empty out the book-display element in case it was displaying information
-  // // about the book we just updated, replace with a message for the user to get
-  // // all the books again.
-  // $('#list-display').html('Lists have changed! Click "Show" again to see all the lists.')
-  //
-  // // add class for success messaging
-  // $('#update-list-message').addClass('success')
-  //
-  // // use setTimeout to allow the success message to stay for 5 seconds before
-  // // the message is replaced with '' and the 'success' class is removed
-  // setTimeout(() => {
-  //   $('#update-list-message').html('')
-  //   $('#update-list-message').removeClass('success')
-  // }, 5000)
-  //
-  // // reset all forms
-  // $('form').trigger('reset')
 }
 
 const onListDeleteSuccess = function () {
   $('#message').text('Grocery list deleted!')
-  // add success message to our delete-book-message element
-  // $('#delete-list-message').html('List successfully deleted!')
-  //
-  // // empty out the book-display element in case it was displaying information
-  // // about the book we just deleted, replace with a message for the user to get
-  // // all the books again.
-  // $('#list-display').html('Lists have changed! Click "Show" again to see all the lists')
-  //
-  // // add class for success messaging
-  // $('#delete-list-message').addClass('success')
-  //
-  // // use setTimeout to allow the success message to stay for 5 seconds before
-  // // the message is replaced with '' and the 'success' class is removed
-  // setTimeout(() => {
-  //   $('#delete-list-message').html('')
-  //   $('#delete-list-message').removeClass('success')
-  // }, 5000)
-  //
-  // // reset all forms
-  // $('form').trigger('reset')
 }
 
 module.exports = {
@@ -195,9 +128,4 @@ module.exports = {
   onListUpdateSuccess,
   onListDeleteSuccess,
   currentUser
-  // onShowAllFailure
-  // onNewGameSuccess,
-  // onNewGameFailure,
-  // onGamesHistorySuccess,
-  // onGamesHistoryFailure,
 }

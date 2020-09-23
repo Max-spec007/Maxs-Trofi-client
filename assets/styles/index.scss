@@ -13,32 +13,13 @@ hover {
 
 .img-responsive {
   display: flex;
-  // align-items: margin-left;
-  // justify-content: center;
-  // justify-content: flex-end;
-  // margin-right: 0 auto;
-  // display: flex;
-  // justify-content: space-between;
-  // position: relative;
-  // float: right;
-  // margin: 0 auto;
-  // margin-right: auto;
-  // margin-bottom: auto;
-  // margin-left: auto;
-  // margin: 0;
-  // margin: none;
-  // height: auto;
-  // width: auto;
   height: 90vh;
   margin: 0 auto;
   width: 210vh;
-  // width: 1020px;
-  // height: 620px;
 }
 
 body {
-  // background: #89CFF0;
-  // background-image: url('./public/cloud-background.jpg');
+  background-image: url('./public/cloud-background.jpg');
 }
 
 .login-box {
@@ -46,7 +27,6 @@ body {
   width: 520px;
   height: 620px;
   color: #fff;
-  // color: black;
   top: 50%;
   left: 50%;
   position: relative;
@@ -58,7 +38,7 @@ body {
 
 form input[type='submit'] {
   margin-bottom: -20px;
-  width: 160px;
+  width: 180px;
   cursor: pointer;
   line-height: 20px;
   background: #e3b732;
@@ -120,22 +100,16 @@ table.list{
 }
 
 td, th {
-    // border: 1px solid #dddddd;
-    // border: 1px solid #89CFF0;
-    // border: 1px solid rgba(0, 0, 0, 0.5);
     border: 1px rgba(0, 0, 0, 0.5);
     text-align: left;
     padding: 8px;
 }
 
 th {
-  // color: white;
-  color: black;
+  color: white;
 }
 
 tr:nth-child(even),table.list thead>tr {
-    // background-color: #dddddd;
-    // background-color: #89CFF0;
     background-color: rgba(0, 0, 0, 0.5);
 }
 

@@ -6,10 +6,10 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 const userEvents = require('./events')
-// const grocerylistevents = require('./grocerylistevents')
 
 $(() => {
-  // $('.center').hide()
+  $('.center').hide()
+  $('.list').hide()
   $('#buttons').show()
   $('#change-password').hide()
   $('#sign-out-form').hide()
@@ -18,14 +18,8 @@ $(() => {
   $('#sign-in-form').on('submit', userEvents.onSignIn)
   $('#sign-out-form').on('submit', userEvents.onSignOut)
   $('#change-password').on('submit', userEvents.onChangePassword)
-  // $('#grocery-list-form').on('submit', userEvents.onGroceryListSubmit)
   $('#grocery-list-form').on('submit', userEvents.onListCreate)
   $('#show').on('click', userEvents.onShowAllList)
   $('#edit').on('submit', userEvents.onListUpdate)
   $('#delete').on('submit', userEvents.onListDelete)
-  // $('#grocery-list-form').on('submit', userEvents.onListDelete)
-  // $('#submit').on('click', userEvents.onListCreate)
-  // $('#show').on('click', userEvents.onShowAllList)
-  // $('#edit').on('click', userEvents.onListUpdate)
-  // $('#delete').on('click', userEvents.onListDelete)
 })

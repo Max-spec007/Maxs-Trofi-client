@@ -83,7 +83,6 @@ const onShowAllList = function (event) {
   event.preventDefault()
   // use getFormFields to get data from the form
 
-  // send data in AJAX request to the API
   api.showAllList()
   // handle successul response
     .then(ui.onShowAllListSuccess)

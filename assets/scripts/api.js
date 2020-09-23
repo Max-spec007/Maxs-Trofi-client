@@ -82,46 +82,6 @@ const listDelete = function (data) {
   })
 }
 
-// const onDelete = function (data)
-//   return $.ajax({
-//     url: config.apiUrl + '/groceries',
-//     method: 'DELETE',
-//     data: '{}',
-//     headers: {
-//     Authorization: 'Bearer ' + store.user.token
-//   },
-// })
-// }
-
-// const listHistory = function () {
-//   return $.ajax({
-//     url: config.apiUrl + '/groceries',
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Bearer ' + store.user.token
-//     }
-//   })
-// }
-
-// const onSquaresClick = function (data, playerValue, gamesOver) {
-//   return $.ajax({
-//     url: config.apiUrl + '/games/' + currentPlay.game._id,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Bearer ' + store.user.token
-//     },
-//     data: {
-//       game: {
-//         cell: {
-//           index: data,
-//           value: playerValue
-//         },
-//         over: gamesOver
-//       }
-//     }
-//   })
-// }
-
 module.exports = {
   signUp,
   signIn,
@@ -132,9 +92,4 @@ module.exports = {
   listUpdate,
   listDelete,
   currentUser
-  // modify,
-  // delete
-  // gamesHistory,
-  // onSquaresClick,
-  // currentPlay
 }
