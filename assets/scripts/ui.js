@@ -48,6 +48,7 @@ const onSignOutSuccess = function (response) {
   $('#sign-out-form').hide()
   $('#my-login').show()
   $('#my-logout').hide()
+  $('#listContent').empty()
 }
 
 const onSignOutFailure = function () {
@@ -77,7 +78,7 @@ const onShowAllListSuccess = function (response) {
 
   response.groceries.forEach(function (grocery) {
     const groceryHTML = (`
-<table class="list">
+<table class="list container">
   <thead>
       <tr>
         <th>Name Of Food</th>
