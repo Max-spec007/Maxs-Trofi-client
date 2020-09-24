@@ -101,6 +101,7 @@ const onShowAllListSuccess = function (response) {
 
     groceriesHTML += groceryHTML
   })
+  $('#listContent').empty()
   $('#listContent').html(groceriesHTML)
 
   $('form').trigger('reset')
