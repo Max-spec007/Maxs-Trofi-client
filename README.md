@@ -46,7 +46,7 @@ for buttons of the forms.
   + Mongoose
 #### Links
 - Deployed Front-End: <https://max-spec007.github.io/project2-client/>
-- Deployed Backend: <https://max-grocery-app-1.herokuapp.com/>
+- Deployed Back-End: <https://max-grocery-app-1.herokuapp.com/>
 - Front-End Repository Link: <https://github.com/Max-spec007/project2-client>
 - Back-End Repository Link: <https://github.com/Max-spec007/project2-api>
 ## Technical Details
