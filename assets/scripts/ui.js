@@ -2,20 +2,20 @@ const store = require('./store')
 const currentUser = require('./currentUser')
 
 const onSignUpSuccess = function (response) {
-  $('#message').text('Thanks for signing up ' + response.user.email)
+  $('#message').text('Thanks for signing up ' + response.user.email).fadeIn(2000).fadeOut(2000)
   $('#sign-up-form').trigger('reset')
   $('#my-login').show()
   $('#my-logout').hide()
 }
 
 const onSignUpFailure = function () {
-  $('#message').text('Sign up failed try again')
+  $('#message').text('Sign up failed try again').fadeIn(2000).fadeOut(2000)
   $('#my-login').show()
   $('#my-logout').hide()
 }
 const onSignInSuccess = function (response) {
   store.user = response.user
-  $('#message').text('Thanks for signing in ' + response.user.email + ' - Please scroll down to access your grocery list creator, no notepad needed! Remember to click Show after you Create, Edit or Delete. Happy Shopping!')
+  $('#message').text('Thanks for signing in ' + response.user.email + ' - Please scroll down to access your grocery list creator, no notepad needed! Remember to click Show after you Create, Edit or Delete. Happy Shopping!').fadeIn(2000).fadeOut(2000)
   $('#sign-in-form').trigger('reset')
   $('#change-password').show()
   $('#history').show()
@@ -29,13 +29,13 @@ const onSignInSuccess = function (response) {
   $('#my-logout').show()
 }
 const onSignInFailure = function () {
-  $('#message').text('Sign in failed try again')
+  $('#message').text('Sign in failed try again').fadeIn(2000).fadeOut(2000)
   $('#my-login').show()
   $('#my-logout').hide()
 }
 
 const onSignOutSuccess = function (response) {
-  $('#message').text('Thanks for signing out! ')
+  $('#message').text('Thanks for signing out! ').fadeIn(2000).fadeOut(2000)
   $('#sign-out-form').trigger('reset')
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
@@ -52,25 +52,31 @@ const onSignOutSuccess = function (response) {
 }
 
 const onSignOutFailure = function () {
-  $('#message').text('Sign out failed try again')
+  $('#message').text('Sign out failed try again').fadeIn(2000).fadeOut(2000)
   $('#my-login').hide()
   $('#my-logout').show()
 }
 
 const onChangePasswordSuccess = function () {
-  $('#message').text('Changed password successfully')
+  $('#message').text('Changed password successfully').fadeIn(2000).fadeOut(2000)
   $('#change-password').trigger('reset')
   $('#my-login').hide()
   $('#my-logout').show()
 }
 const onChangePasswordFailure = function () {
-  $('#message').text('Error on change password')
+  $('#message').text('Error on change password').fadeIn(2000).fadeOut(2000)
   $('#my-login').hide()
   $('#my-logout').show()
 }
 
 const onListCreateSuccess = function () {
-  $('#message').text('Grocery list created!')
+  $('#message-create').text('Grocery list created!').fadeIn(2000).fadeOut(2000)
+  $('#grocery-list-form').trigger('reset')
+}
+
+const onListCreateFailure = function () {
+  $('#message-create').text('Grocery list was not created!').fadeIn(2000).fadeOut(2000)
+  $('#grocery-list-form').trigger('reset')
 }
 
 const onShowAllListSuccess = function (response) {
@@ -104,16 +110,33 @@ const onShowAllListSuccess = function (response) {
   })
   $('#listContent').empty()
   $('#listContent').html(groceriesHTML)
+  $('#message-show-all').text('Showing all lists!').fadeIn(2000).fadeOut(2000)
+  $('form').trigger('reset')
+}
 
+const onShowAllListFailure = function () {
+  $('#message-show-all').text('Not displaying all lists!').fadeIn(2000).fadeOut(2000)
   $('form').trigger('reset')
 }
 
 const onListUpdateSuccess = function () {
-  $('#message').text('Grocery list updated!')
+  $('#message-edit').text('Grocery list updated!').fadeIn(2000).fadeOut(2000)
+  $('#edit').trigger('reset')
+}
+
+const onListUpdateFailure = function () {
+  $('#message-edit').text('Grocery list did not update!').fadeIn(2000).fadeOut(2000)
+  $('#edit').trigger('reset')
 }
 
 const onListDeleteSuccess = function () {
-  $('#message').text('Grocery list deleted!')
+  $('#message-delete').text('Grocery list deleted!').fadeIn(2000).fadeOut(2000)
+  $('#delete').trigger('reset')
+}
+
+const onListDeleteFailure = function () {
+  $('#message-delete').text('Grocery list did not delete!').fadeIn(2000).fadeOut(2000)
+  $('#delete').trigger('reset')
 }
 
 module.exports = {
@@ -126,8 +149,12 @@ module.exports = {
   onChangePasswordSuccess,
   onChangePasswordFailure,
   onListCreateSuccess,
+  onListCreateFailure,
   onShowAllListSuccess,
+  onShowAllListFailure,
   onListUpdateSuccess,
+  onListUpdateFailure,
   onListDeleteSuccess,
+  onListDeleteFailure,
   currentUser
 }

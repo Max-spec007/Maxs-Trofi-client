@@ -8,6 +8,7 @@
 const userEvents = require('./events')
 
 $(() => {
+  $('.classMessage').hide()
   $('.center').hide()
   $('.list').hide()
   $('#buttons').show()

@@ -17,7 +17,7 @@
        <div class="flex-container">
        <div class="login-box">
           <section>
-              <p id="message"></p>
+              <p id="message" class='classMessage'></p>
               <h1 id="my-login">LOGIN HERE</h1>
               <h1 id="my-logout">LOGOUT HERE</h1>
               <form id="sign-up-form">
@@ -61,7 +61,9 @@
            <section>
             <table class="center container">
               <td>
-                <button id="show">Show</button>
+                <p id="message-create" class='classMessage'></p>
+                <p id="message-show-all" class='classMessage'></p>
+                <button id="show">Click this to Show All</button>
                 <form id="grocery-list-form">
                   <label for="name-of-food"><strong>Name of Food</strong></label>
                   <input name="groceries[nameOfFood]" type="text" placeholder="Name of Food">
@@ -73,6 +75,7 @@
                   <input name="groceries[dateOfPurchase]" type="text" placeholder="Date of Purchase">
                   <input type="submit" value="Create">
                 </form>
+              <p id="message-edit" class='classMessage'></p>
               <form id="edit">
                   <label for="groceries-id"><strong>Groceries Id</strong></label>
                   <input name="groceries[id]" type="text" placeholder="Groceries ID">
@@ -86,6 +89,7 @@
                   <input name="groceries[dateOfPurchase]" type="text" placeholder="Date of Purchase">
                   <input type="submit" value="Edit">
               </form>
+              <p id="message-delete" class='classMessage'></p>
               <form id="delete">
                   <label for="groceries-id"><strong>Groceries Id</strong></label>
                   <input name="groceries[id]" type="text" placeholder="Groceries ID">
