@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Max's Trofí</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <img class="img-responsive" src="./public/trofi-lightning4-logo.png" alt="Grocery App Logo">
+     <!-- <div class="center"> -->
+       <div class="flex-container">
+       <div class="login-box">
+          <section>
+              <p id="message" class='classMessage'></p>
+              <h1 id="my-login">LOGIN HERE</h1>
+              <h1 id="my-logout">LOGOUT HERE</h1>
+              <form id="sign-up-form">
+                  <label for="sign-up-email">Email</label>
+                  <input name="credentials[email]" type="email" placeholder="Email">
+                  <label for="sign-up-password">Password</label>
+                  <input name="credentials[password]" type="password" placeholder="Password">
+                  <label for="password-confirmation">Password Confirmation</label>
+                  <input name="credentials[password_confirmation]" type="password" placeholder="Confirmation">
+                  <input type="submit" value="Sign Up">
+              </form>
+            </section>
+           <br>
+           <section>
+               <form id="sign-in-form">
+                  <label for="sign-in-email">Email</label>
+                  <input name="credentials[email]" type="email" placeholder="Email">
+                  <label for="sign-in-password">Password</label>
+                  <input name="credentials[password]" type="password" placeholder="Password">
+                  <input type="submit" value="Sign In">
+               </form>
+           </section>
+         <!-- </div> -->
+           <section>
+               <form id="sign-out-form">
+                <input type="submit" value="Sign Out">
+               </form>
+             <br>
+           </section>
+         <!-- </div> -->
+           <section>
+             <form id="change-password">
+               <label for="change-password-old">Password</label>
+               <input name="passwords[old]" type="password" placeholder="Old Password">
+               <label for="change-password-new">Password</label>
+               <input name="passwords[new]" type="password" placeholder="New Password">
+               <input type="submit" value="Change Password">
+             </form>
+           </section>
+         </div>
+           <section>
+            <table class="center container">
+              <td>
+                <p id="message-create" class='classMessage'></p>
+                <p id="message-show-all" class='classMessage'></p>
+                <button id="show">Click this to Show All</button>
+                <form id="grocery-list-form">
+                  <label for="name-of-food"><strong>Name of Food</strong></label>
+                  <input name="groceries[nameOfFood]" type="text" placeholder="Name of Food">
+                  <label for="quantity"><strong>Quantity</strong></label>
+                  <input name="groceries[quantity]" type="text" placeholder="Quantity">
+                  <label for="category"><strong>Category</strong></label>
+                  <input name="groceries[category]" type="text" placeholder="Category">
+                  <label for="date-of-purchase"><strong>Date of Purchase</strong></label>
+                  <input name="groceries[dateOfPurchase]" type="text" placeholder="Date of Purchase">
+                  <input class="button" type="submit" value="Create">
+                </form>
+              <p id="message-edit" class='classMessage'></p>
+              <form id="edit">
+                  <label for="groceries-id"><strong>Groceries Id</strong></label>
+                  <input name="groceries[id]" type="text" placeholder="Groceries ID">
+                  <label for="name-of-food"><strong>Name of Food</strong></label>
+                  <input name="groceries[nameOfFood]" type="text" placeholder="Name of Food">
+                  <label for="quantity"><strong>Quantity</strong></label>
+                  <input name="groceries[quantity]" type="text" placeholder="Quantity">
+                  <label for="category"><strong>Category</strong></label>
+                  <input name="groceries[category]" type="text" placeholder="Category">
+                  <label for="date-of-purchase"><strong>Date of Purchase</strong></label>
+                  <input name="groceries[dateOfPurchase]" type="text" placeholder="Date of Purchase">
+                  <input type="submit" value="Edit">
+              </form>
+              <p id="message-delete" class='classMessage'></p>
+              <form id="delete">
+                  <label for="groceries-id"><strong>Groceries Id</strong></label>
+                  <input name="groceries[id]" type="text" placeholder="Groceries ID">
+                  <input type="submit" value="Delete">
+              </form>
+             </td>
+          </table>
+        <div id="listContent"></div>
+        </section>
+      </div>
+    </body>
+</html>
