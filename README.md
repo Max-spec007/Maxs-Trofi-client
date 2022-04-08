@@ -45,10 +45,10 @@ for buttons of the forms.
   + Cors
   + Mongoose
 #### Links
-- Deployed Front-End: <https://max-spec007.github.io/project2-client/>
+- Deployed Front-End: <https://max-spec007.github.io/Maxs-Trofi-client/>
 - Deployed Back-End: <https://max-grocery-app-1.herokuapp.com/>
-- Front-End Repository Link: <https://github.com/Max-spec007/project2-client>
-- Back-End Repository Link: <https://github.com/Max-spec007/project2-api>
+- Front-End Repository Link: <https://github.com/Max-spec007/Maxs-Trofi-client>
+- Back-End Repository Link: <https://github.com/Max-spec007/Maxs-Trofi-api>
 ## Technical Details
 #### User Account
 - Users have the ability to create brand new accounts in order to login.
